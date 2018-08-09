@@ -1,0 +1,202 @@
+// bower:scss
+@import "bower_components/bootstrap-grid-sass/bootstrap-grid-sass.scss";
+// endbower
+
+
+
+// modules & sections
+
+@import "modules/sprite";
+@import "functions";
+@import "reset";
+@import "fonts";
+@import "variables";
+
+@import "sections/header";
+@import "sections/head-section";
+
+
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+
+
+html {
+  position: relative;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 100%;
+  line-height: 1.2;
+  font-size: 10px;
+}
+
+/* отступы секций */
+.section {
+  margin: 80px 0;
+}
+
+h1, .h1 {
+  background-color: #000;
+  font-family: $isadora;
+  font-size: 5.2rem;
+  color: $white;
+  
+}
+p {
+  font-family: $text-font;
+  font-size: 1.6rem;
+  color: $black;
+}
+
+h2, .h2 {
+  font-family: $header-font;
+  font-size: 2.4rem;
+  color: $black;
+}
+
+/* хэдер */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  .container {
+    padding: 30px 0;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.35;
+    background-color: black;
+  }
+}
+
+//Логотип
+.logo {
+  margin-left: 10px;
+  z-index: 3;
+}
+
+//главное меню
+.menu {
+  z-index: 3;
+  margin-top: 15px;
+  &-item {
+    display: inline-block;
+    margin-right: 45px;
+    a {
+      font-size: 12px;
+      font-family: $menu-font;
+      color: $white;
+      text-transform: uppercase;
+      .arr {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        -webkit-border-radius: 50px;
+        -moz-border-radius: 50px;
+        border-radius: 50px;
+        text-align: center;
+        margin-right: 7px;
+        padding-left: 2px;
+        .fas {
+          line-height: 1.8;
+          font-size: 11px;
+        }
+      }
+      span {
+        text-decoration: underline;
+      }
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover {
+      a>.arr {
+        background-color: $accent;
+        .fas {
+          color: $black;
+        }
+      }
+      span {
+        color: $accent;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+//номер телефона
+.phone {
+  margin-top: 5px;
+  text-align: right;
+  .order {
+    color: $white;
+    opacity: 0.35;
+    font-size: 12px;
+  }
+  &-number {
+    .fas {
+      display: inline-block;
+      color: $accent;
+      font-size: 12px;
+      margin-right: 2px;
+      margin-top: -2px;
+    }
+    .number {
+      display: inline-block;
+      font-family: $phone-font;
+      font-size: 24px;
+      color: $white;
+      span {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+
+//предложения
+.offers {
+  height: 86rem;
+  width: 100%;
+  background-position: center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(3px);
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .2;
+
+  }
+}
+
+@media (max-width: 1200px) {
+  .menu {
+    &-item {
+      margin-right: 18px;
+    }
+  }
+}
