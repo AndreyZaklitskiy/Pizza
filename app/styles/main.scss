@@ -1,8 +1,10 @@
 // bower:scss
 @import "bower_components/bootstrap-grid-sass/bootstrap-grid-sass.scss";
+
+@import "../../bower_components/Font-Awesome/web-fonts-with-css/css/fontawesome-all.min.css";
 // endbower
 
-
+//@import "../../bower_components/Font-Awesome/web-fonts-with-css/css/fontawesome-all.min.css";
 
 // modules & sections
 
@@ -151,6 +153,7 @@ header {
     color: $white;
     opacity: 0.35;
     font-size: 12px;
+    letter-spacing: 1.5px;
   }
   &-number {
     .fas {
@@ -165,6 +168,7 @@ header {
       font-family: $phone-font;
       font-size: 24px;
       color: $white;
+      letter-spacing: .5px;
       span {
         font-size: 16px;
       }
@@ -176,19 +180,18 @@ header {
 //предложения
 .offers {
   height: 86rem;
-  width: 100%;
+
   background-position: center;
   -webkit-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
-  filter: blur(3px);
   &::before {
     content: '';
     position: absolute;
     width: 100%;
     height: 100%;
     background-color: black;
-    opacity: .2;
+    opacity: .3;
 
   }
 }
