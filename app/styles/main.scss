@@ -211,6 +211,7 @@ header {
     .h1 {
       margin-top: 186px;
       margin-bottom: 30px;
+      text-transform: capitalize;
     }
     p {
       margin-bottom: 35px;
@@ -224,7 +225,38 @@ header {
       height: 500px;
     }
   }
+//  стрелки верхнего слайдера
+  .slick-arrow, .slick-next, .slick-prev {
+    width: 50px;
+    height: 50px;
+    font-size: 36px;
+    color: #706965;
+    background-color: transparent;
+    z-index: 5;
+    transition: all .4s;
+    &:before {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      background-color: transparent;
+      left: 0;
+      top: 0;
+      transition: all .4s;
+    }
+    &:hover {
+        color: $white;
+      &::before {
+        opacity: 0.2;
+        background-color: $accent;
+      }
+    }
+  }
 }
+
 // стили кнопки
 .btn {
   display: inline-block;
