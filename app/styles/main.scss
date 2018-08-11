@@ -46,6 +46,7 @@ body {
   min-height: 100%;
   line-height: 1.2;
   font-size: 14px;
+  background-color: #f4f4f4;
 }
 
 /* отступы секций */
@@ -57,7 +58,12 @@ h1, .h1 {
   font-family: $isadora;
   font-size: 52px;
   color: $white;
-  
+}
+h2, .h2 {
+  font-family: $header-font;
+  font-size: 24px;
+  color: $black;
+  text-align: center;
 }
 p {
   font-family: $text-font;
@@ -65,11 +71,9 @@ p {
   color: $black;
 }
 
-h2, .h2 {
-  font-family: $header-font;
-  font-size: 24px;
-  color: $black;
-}
+
+
+
 
 /* хэдер */
 header {
@@ -274,6 +278,28 @@ header {
     margin-right: 8px;
   }
 }
+
+.choose-pizza {
+  z-index: 10;
+  background-color: #f4f4f4;
+  position: relative;
+  .container {
+    margin-top: -100px;
+    background-color: #fff;
+    padding-top: 60px;
+    h2 {
+      text-transform: uppercase;
+      margin-bottom: 60px;
+    }
+
+  }
+}
+
+
+
+
+
+
 
 /* media */
 
