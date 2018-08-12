@@ -1,6 +1,5 @@
 // bower:scss
 @import "bower_components/bootstrap-grid-sass/bootstrap-grid-sass.scss";
-
 @import "../../bower_components/Font-Awesome/web-fonts-with-css/css/fontawesome-all.min.css";
 @import "../../bower_components/slick-carousel/slick/slick.css";
 @import "../../bower_components/slick-carousel/slick/slick-theme.css";
@@ -60,10 +59,18 @@ h1, .h1 {
   color: $white;
 }
 h2, .h2 {
-  font-family: $header-font;
+  font-family: $menu-font;
   font-size: 24px;
+
   color: $black;
   text-align: center;
+}
+h3, .h3 {
+  text-transform: uppercase;
+  font-size: 18px;
+  font-family: $name-font;
+  font-weight: normal;
+  color: $black;
 }
 p {
   font-family: $text-font;
@@ -265,7 +272,7 @@ header {
 .btn {
   display: inline-block;
   padding: 17px 35px;
-  background-color: $accent;
+  background-color: $accent-light;
   text-align: center;
   text-transform: uppercase;
   color: $white;
@@ -279,6 +286,13 @@ header {
   }
 }
 
+.section-header {
+  .h2 {
+    text-transform: uppercase;
+    margin-bottom: 60px;
+  }
+}
+
 .choose-pizza {
   z-index: 10;
   background-color: #f4f4f4;
@@ -286,18 +300,93 @@ header {
   .container {
     margin-top: -100px;
     background-color: #fff;
-    padding-top: 60px;
-    h2 {
-      text-transform: uppercase;
-      margin-bottom: 60px;
-    }
+    padding-top: 76px;
 
   }
 }
 
+.pizza {
+  width: 280px;
+  margin-left: 22px;
+  padding-bottom: 65px;
+  &-offer {
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 40px 0 30px;
 
+  }
+  &-image {
+    width: 205px;
+    height: 205px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 25px;
+  }
 
+  &-data {
+    position: relative;
+  }
+  //цена пиццы
+  &-price {
+    top: 3px;
+    right: -16px;
+    display: inline-block;
+    position: absolute;
+    padding: 10px 20px 10px;
+    color: $white;
+    font-family: $phone-font;
+    font-size: 24px;
+    background-color: $accent-light;
+  }
 
+  &-description {
+    margin-top: 30px;
+    h3 {
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $accent-light;
+    }
+    p {
+      padding-bottom: 25px;
+    }
+    .composition {
+      color: $grey;
+      padding-bottom: 33px;
+    }
+  }
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.size {
+  display: inline-block;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  text-align: center;
+  color: $white;
+  font-family: $phone-font;
+  line-height: 2.1;
+  cursor: pointer;
+  &-26 {
+    margin-left: 30px;
+    width: 45px;
+    height: 45px;
+    border: 5px solid $accent-light;
+    font-size: 16px;
+  }
+  &-32 {
+    margin-left: 10px;
+    width: 54px;
+    height: 54px;
+    border: 6px solid $accent-light;
+    font-size: 20px;
+  }
+  &:hover {
+    background-color: $accent;
+  }
+}
 
 
 
