@@ -1,7 +1,7 @@
 $(document).ready(function(){
   //кнопка выбрать
-  $('.button').on('click', function() {
-    $(this).toggleClass('active');
+  $('.btn').on('click', function() {
+    $('.button').toggleClass('active');
   });
 
   //Верхний слайдер (горячие предложения).
@@ -35,6 +35,13 @@ $(document).ready(function(){
     $(this).addClass('selected');
   });
   if(ts.hasClass('selected')) {
+    var littlePizza = '999 руб.';
+    $(this).closest('.pizza-price').html(littlePizza);
+  }
+  if(tt.hasClass('selected')) {
+    var bigPizza = '1 345 руб.';
+    $(this).closest('.pizza').find('.pizza-price').text(bigPizza);
 
   }
+
 });
