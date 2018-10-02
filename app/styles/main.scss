@@ -1,5 +1,7 @@
 // bower:scss
 @import "bower_components/bootstrap-grid-sass/bootstrap-grid-sass.scss";
+@import "bower_components/slick-carousel/slick/slick.scss";
+
 @import "../../bower_components/Font-Awesome/web-fonts-with-css/css/fontawesome-all.min.css";
 @import "../../bower_components/slick-carousel/slick/slick.css";
 @import "../../bower_components/slick-carousel/slick/slick-theme.css";
@@ -338,6 +340,8 @@ header {
 
 .choose-btn {
   @extend .btn;
+  position: absolute;
+  bottom: 0;
   .fas {
     margin-right: 8px;
   }
@@ -354,6 +358,7 @@ header {
   z-index: 10;
   background-color: #f4f4f4;
   position: relative;
+  margin-bottom: 100px;
   .container {
     margin-top: -100px;
     background-color: #fff;
@@ -373,7 +378,10 @@ header {
   margin-left: 22px;
   &-slider {
     position: static;
-    padding-bottom: 65px;
+    padding-bottom: 20px;
+    &.slick-slider {
+      margin-bottom: 100px;
+    }
     .slick-arrow, .slick-prev, .slick-next {
       background-color: $accent;
       width: 47px;
@@ -445,8 +453,32 @@ header {
       padding-bottom: 33px;
     }
   }
+  //.button {
+  //  position: absolute;
+  //  bottom: 0;
+  //}
   &:first-child {
     margin-left: 0;
+  }
+}
+ul.slick-dots {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 77px;
+  li {
+    height: 15px;
+    width: 15px;
+    background-color: lighten($accent, 10%);
+    border-radius: 30px;
+    button {
+      &:before {
+        content: ' ';
+      }
+    }
+  }
+  li.slick-active {
+    background-color: $accent;
   }
 }
 

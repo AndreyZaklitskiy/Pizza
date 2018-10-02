@@ -18,6 +18,9 @@ $(document).ready(function(){
     prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
     nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>'
   });
+  // выравниваем высоту айтемов pizza-slider
+  var pizzaHeight = $('.pizza-slider').height();
+  $('.pizza').height(pizzaHeight);
 
   // выбор размера пиццы
   var ts = $('.pizza').find('.size-26');
@@ -41,7 +44,8 @@ $(document).ready(function(){
   if(tt.hasClass('selected')) {
     var bigPizza = '1 345 руб.';
     $(this).closest('.pizza').find('.pizza-price').text(bigPizza);
+  };
 
-  }
+
 
 });
