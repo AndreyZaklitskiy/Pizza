@@ -26,26 +26,23 @@ $(document).ready(function(){
   var ts = $('.pizza').find('.size-26');
   var tt = $('.pizza').find('.size-32');
   var price = $('.pizza').find('h3 > span');
-  var little = '26';
-  var big = '32';
+
 
   ts.on('click', function(){
+    var little = '26';
+    var littlePizzaPrice = '999 руб.';
     $(this).addClass('selected');
     $(this).siblings().removeClass('selected');
+    $(this).closest('.pizza').find('.pizza-price').html(littlePizzaPrice);
+    $(this).closest('.pizza').find('.pizza-size').html(little);
+    $(this).closest('.pizza-size').html(little);
   });
   tt.on('click', function(){
+    var big = '32';
+    var bigPizzaPrice = '1 345 руб.';
     $(this).siblings().removeClass('selected');
     $(this).addClass('selected');
+    $(this).closest('.pizza').find('.pizza-price').html(bigPizzaPrice);
+    $(this).closest('.pizza').find('.pizza-size').html(big);
   });
-  if(ts.hasClass('selected')) {
-    var littlePizza = '999 руб.';
-    $(this).closest('.pizza-price').html(littlePizza);
-  }
-  if(tt.hasClass('selected')) {
-    var bigPizza = '1 345 руб.';
-    $(this).closest('.pizza').find('.pizza-price').text(bigPizza);
-  };
-
-
-
 });

@@ -340,8 +340,6 @@ header {
 
 .choose-btn {
   @extend .btn;
-  position: absolute;
-  bottom: 0;
   .fas {
     margin-right: 8px;
   }
@@ -428,11 +426,15 @@ header {
   }
   //цена пиццы
   &-price {
+    width: 135px;
+    height: 45px;
+    line-height: 1;
+    text-align: center;
     top: 3px;
     right: -16px;
     display: inline-block;
     position: absolute;
-    padding: 10px 20px 10px;
+    padding: 10px 10px 10px;
     color: $white;
     font-family: $phone-font;
     font-size: 24px;
@@ -452,6 +454,10 @@ header {
       color: $grey;
       padding-bottom: 33px;
     }
+  }
+  .choose-btn {
+    position: absolute;
+    bottom: 0;
   }
   //.button {
   //  position: absolute;
