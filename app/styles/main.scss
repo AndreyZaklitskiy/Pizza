@@ -80,9 +80,113 @@ p {
   color: $black;
 }
 
+.button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: 161px;
+  background-color: $accent;
+  text-align: center;
+  text-transform: uppercase;
+  color: $white;
+  font-family: $menu-font;
 
+  .quantity {
+    display: none;
+    padding-right: 8px;
+    padding-left: 16px;
 
+    transition: all .5s;
 
+  }
+  input.number {
+    display: none;
+    width: 40px;
+    height: 48px;
+    text-align: center;
+    background-color: $accent-light;
+    outline: none;
+    border: none;
+    font-family: $phone-font;
+    font-size: 20px;
+    color: white;
+
+    transition: all .5s;
+
+    &::placeholder {
+      color: white;
+    }
+  }
+}
+
+.button.active {
+  cursor: default;
+  width: 200px;
+  .quantity {
+    display: inline-block;
+  }
+  .number {
+    display: inline-block;
+  }
+  .btn {
+    cursor: pointer;
+    padding: 17px 16px 8px 17px;
+    .choose {
+      display: none;
+    }
+  }
+}
+
+// стили кнопки
+.btn {
+  display: inline-block;
+  padding: 17px 35px;
+  height: 48px;
+  background-color: $accent;
+  text-align: center;
+  text-transform: uppercase;
+  color: $white;
+  font-family: $menu-font;
+}
+
+.choose-btn {
+  @extend .btn;
+  .fas {
+    margin-right: 8px;
+  }
+}
+
+//Логотип
+.logo {
+  display: inline-block;
+  margin-left: 10px;
+  z-index: 3;
+}
+
+.scroll-button {
+  z-index: 20;
+  position: absolute;
+  top: 0;
+  right: 50%;
+  -webkit-transform: translate(50%, -50%);
+  -moz-transform: translate(50%, -50%);
+  -ms-transform: translate(50%, -50%);
+  -o-transform: translate(50%, -50%);
+  transform: translate(50%, -50%);
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background-color: $accent-light;
+  .fas {
+    margin-left: 22px;
+    line-height: 2.4;
+    color: $white;
+    text-align: center;
+    font-size: 25px;
+  }
+}
 
 /* хэдер */
 header {
@@ -106,13 +210,28 @@ header {
   }
 }
 
-
-//Логотип
-.logo {
-  display: inline-block;
-  margin-left: 10px;
-  z-index: 3;
+.section-header {
+  .h2 {
+    color: $black;
+    font-family: $header-font;
+    text-transform: uppercase;
+    margin-top: 80px;
+    margin-bottom: 40px;
+  }
+  &.white {
+    h2 {
+      color: $white;
+    }
+    p {
+      margin-right: auto;
+      margin-left: auto;
+      color: $white;
+      text-align: center;
+      width: 600px;
+    }
+  }
 }
+
 
 //главное меню
 .menu {
@@ -277,96 +396,13 @@ header {
   }
 }
 
-.button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 48px;
-  width: 161px;
-  background-color: $accent;
-  text-align: center;
-  text-transform: uppercase;
-  color: $white;
-  font-family: $menu-font;
-  .quantity {
-    display: none;
-    padding-right: 8px;
-    padding-left: 16px;
-
-    transition: all .5s;
-
-  }
-  input.number {
-    display: none;
-    width: 40px;
-    height: 48px;
-    text-align: center;
-    background-color: $accent-light;
-    outline: none;
-    border: none;
-    font-family: $phone-font;
-    font-size: 20px;
-    color: white;
-
-    transition: all .5s;
-
-    &::placeholder {
-      color: white;
-    }
-  }
-}
-
-.button.active {
-  width: 200px;
-  .quantity {
-    display: inline-block;
-  }
-  .number {
-    display: inline-block;
-  }
-  .btn {
-    padding: 17px 16px 8px 17px;
-   .choose {
-     display: none;
-   }
-  }
-}
-
-// стили кнопки
-.btn {
-  display: inline-block;
-  padding: 17px 35px;
-  height: 48px;
-  background-color: $accent;
-  text-align: center;
-  text-transform: uppercase;
-  color: $white;
-  font-family: $menu-font;
-}
-
-.choose-btn {
-  @extend .btn;
-  .fas {
-    margin-right: 8px;
-  }
-}
-
-.section-header {
-  .h2 {
-    text-transform: uppercase;
-    margin-bottom: 60px;
-  }
-}
-
 .choose-pizza {
   z-index: 10;
   background-color: #f4f4f4;
   position: relative;
-  margin-bottom: 100px;
   .container {
     margin-top: -100px;
     background-color: #fff;
-    padding-top: 76px;
     position: relative;
   }
   .row {
@@ -382,6 +418,7 @@ header {
   margin-left: 22px;
   &-slider {
     position: static;
+    padding-top: 20px;
     padding-bottom: 20px;
     &.slick-slider {
       margin-bottom: 100px;
@@ -523,12 +560,155 @@ ul.slick-dots {
   }
 }
 
+section.snacks {
+  position: relative;
+  background-position: center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  .container {
+    z-index: 2;
+    position: relative;
+    padding-bottom: 75px;
+  }
+  &:before {
+    content: '';
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $black;
+    opacity: .8;
+  }
+}
 
+.snack-slider {
+  margin-top: 65px;
+  //  стрелки слайдера с закусками
+  .slick-arrow, .slick-next, .slick-prev {
+    width: 50px;
+    height: 50px;
+    font-size: 36px;
+    color: #706965;
+    background-color: transparent;
+    z-index: 2;
 
+    &:before {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      background-color: transparent;
+      left: 0;
+      top: 0;
+    }
+    &:hover {
+      color: $white;
+      &::before {
+        opacity: 0.2;
+        background-color: $accent;
+      }
+    }
+  }
+  .slick-prev {
+    left: -4%;
+  }
+  .slick-next {
+    right: -4%;
+  }
 
+  ul.slick-dots {
+    bottom: 0;
+    margin-bottom: 0;
+    li {
+      height: 15px;
+      width: 15px;
+      opacity: 0.4;
+      background-color: white;
+      border-radius: 30px;
+      button {
+        &:before {
+          content: ' ';
+        }
+      }
+    }
+    li.slick-active {
+      opacity: 1;
+      background-color: $accent;
+    }
+  }
+}
+.snack {
+  position: relative;
+  background-color: $white;
+  margin: 0 15px 68px;
+  .photo {
+  }
+  img {
+    width: 260px;
+    height: 180px;
+  }
+  .description {
+    background-color: $white;
+    width: 260px;
+    position: relative;
+    padding-top: 50px;
+    text-align: center;
+    .button {
+      width: 100%;
+      .number {
+        margin-left: auto;
+      }
+    }
+  }
+  .price {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-color: $accent-light;
+    width: 60px;
+    height: 60px;
+    padding-top: 13px;
+    position: absolute;
+    top: 0;
+    left: 100px;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    p {
+      color: $white;
+      font-size: 12px;
+      text-align: center;
+      span {
+        font-family: $menu-font;
+      }
+    }
+    .weight {
+      padding-bottom: 4px;
+    }
+  }
 
+  h3 {
+    padding-bottom: 10px;
+  }
+  p {
+    font-size: 13px;
+  }
+  p.text {
+    line-height: 24px;
+    padding: 0 30px 10px;
+  }
+  p.composition {
+    background-color: #f2f2f2;
+    line-height: 24px;
+    padding: 10px 20px 8px;
+  }
 
-
+}
 
 
 /* media */
