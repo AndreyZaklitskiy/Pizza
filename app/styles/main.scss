@@ -292,6 +292,9 @@ header {
     display: none;
     padding-right: 8px;
     padding-left: 16px;
+
+    transition: all .5s;
+
   }
   input.number {
     display: none;
@@ -304,6 +307,9 @@ header {
     font-family: $phone-font;
     font-size: 20px;
     color: white;
+
+    transition: all .5s;
+
     &::placeholder {
       color: white;
     }
@@ -459,10 +465,6 @@ header {
     position: absolute;
     bottom: 0;
   }
-  //.button {
-  //  position: absolute;
-  //  bottom: 0;
-  //}
   &:first-child {
     margin-left: 0;
   }

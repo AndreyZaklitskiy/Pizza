@@ -1,7 +1,8 @@
 $(document).ready(function(){
+
   //кнопка выбрать
   $('.btn').on('click', function() {
-    $('.button').toggleClass('active');
+    $(this).closest('.button').toggleClass('active');
   });
 
   //Верхний слайдер (горячие предложения).
@@ -18,14 +19,16 @@ $(document).ready(function(){
     prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
     nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>'
   });
+
   // выравниваем высоту айтемов pizza-slider
+  /*
   var pizzaHeight = $('.pizza-slider').height();
   $('.pizza').height(pizzaHeight);
+  */
 
   // выбор размера пиццы
   var ts = $('.pizza').find('.size-26');
   var tt = $('.pizza').find('.size-32');
-  var price = $('.pizza').find('h3 > span');
 
 
   ts.on('click', function(){
@@ -46,3 +49,4 @@ $(document).ready(function(){
     $(this).closest('.pizza').find('.pizza-size').html(big);
   });
 });
+
