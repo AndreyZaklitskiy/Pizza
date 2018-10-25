@@ -218,16 +218,19 @@ header {
     margin-top: 80px;
     margin-bottom: 40px;
   }
+  p {
+    text-align: center;
+    width: 550px;
+    margin-right: auto;
+    margin-left: auto;
+  }
   &.white {
     h2 {
       color: $white;
     }
     p {
-      margin-right: auto;
-      margin-left: auto;
       color: $white;
-      text-align: center;
-      width: 600px;
+
     }
   }
 }
@@ -318,6 +321,7 @@ header {
 
 //предложения
 .offers {
+  position: relative;
   height: 860px;
   background-position: center;
   -webkit-background-size: cover;
@@ -645,6 +649,7 @@ section.snacks {
   background-color: $white;
   margin: 0 15px 68px;
   .photo {
+
   }
   img {
     width: 260px;
@@ -707,8 +712,105 @@ section.snacks {
     line-height: 24px;
     padding: 10px 20px 8px;
   }
-
 }
+
+.drinks {
+  .container {
+    text-align: center;
+  }
+  .section-header {
+    padding-bottom: 100px;
+  }
+
+  &-slider {
+
+    .slick-arrow, .slick-next, .slick-prev {
+      width: 50px;
+      height: 50px;
+      font-size: 36px;
+      color: #706965;
+      background-color: transparent;
+      z-index: 2;
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        background-color: transparent;
+        left: 0;
+        top: 0;
+      }
+      &:hover {
+        color: $white;
+        &::before {
+          opacity: 0.2;
+          background-color: $accent;
+        }
+      }
+    }
+    .slick-prev {
+      left: -4%;
+    }
+    .slick-next {
+      right: -4%;
+    }
+
+  }
+  &-slide {
+    margin: auto;
+    position: relative;
+    width: 204px !important;
+    text-align: center;
+    margin: 0 50px;
+    .image {
+      margin-bottom: 55px;
+    }
+    img {
+      margin: 0 auto;
+      height: 285px;
+    }
+    .text {
+      margin-bottom: 30px;
+      h3 {
+        color: #333333;
+        padding-bottom: 18px;
+      }
+      p {
+        font-family: $name-font;
+        color: #999999;
+        font-size: 16px;
+      }
+    }
+
+    .button {
+      width: 100%;
+      .number {
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+.garantis {
+  background-image: url(../images/flour.jpg);
+  background-position: top;
+  -webkit-background-size: cover;
+  background-size: cover;
+  .section-header {
+    padding-top: 90px;
+    padding-bottom: 70px;
+    p {
+      margin-top: 40px;
+      line-height: 28px;
+      font-size: 18px;
+    }
+  }
+}
+
 
 
 /* media */
