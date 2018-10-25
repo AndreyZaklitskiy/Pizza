@@ -811,6 +811,40 @@ section.snacks {
   }
 }
 
+.checkout {
+  @extend .col-md-7;
+  .container {
+    margin: 80px auto;
+  }
+}
+
+.checkout-form {
+  .section-header {
+    margin-bottom: 60px;
+    h2 {
+      text-align: left;
+      padding-bottom: 30px;
+    }
+    p {
+      width: auto;
+      max-width: 620px;
+      text-align: left;
+      margin-right: 0;
+      margin-left: 0;
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+  //форма
+  .form {
+    &-item {
+      @extend .col-md-3;
+    }
+  }
+
+}
+
+
 
 
 /* media */
